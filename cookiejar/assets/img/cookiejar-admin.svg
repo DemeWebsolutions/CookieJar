@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1283" viewBox="0 0 1366 1283" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dashTitle dashDesc">
+  <title id="dashTitle">Admin Page — Bakery Dashboard Variation (Sanitized Local)</title>
+  <desc id="dashDesc">Admin Page layout with local-only assets: sidebar navigation, centered logo, searchbar, a single main Section X for all content, and a remastered footer with Manage Cookies Banner, Import/Export, and Reset to Default. All external image links replaced with local files.</desc>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="dotShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="elev1" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.3" flood-color="#0F172A" flood-opacity=".10"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity=".08"/>
+    </filter>
+    <filter id="elev2" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity=".10"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F172A" flood-opacity=".06"/>
+    </filter>
+    <linearGradient id="geoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#008ED6"/><stop offset="100%" stop-color="#00253B"/>
+    </linearGradient>
+    <style>
+      text, tspan { font-family: system-ui, ui-sans-serif, -apple-system, "Segoe UI", Roboto; }
+      .title { font-weight:700; font-size:18px; fill:#0F172A; }
+      .label { font-weight:600; font-size:12px; fill:#64748B; }
+      .value { font-weight:700; font-size:22px; fill:#0F172A; }
+      .small { font-size:12px; fill:#0F172A; }
+      .mono { font-weight:600; font-size:12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas; fill:#0F172A; }
+      .card { fill:#FFFFFF; }
+      .panelTitle { font-weight:600; font-size:13px; fill:#00253B; letter-spacing:.5px; }
+      .surface { fill:#FFFFFF; stroke:#E2E8F0; stroke-width:.6; }
+      .surface-alt { fill:#F9FBFD; stroke:#E2E8F0; stroke-width:.6; }
+      .legendDot { r:6; }
+      .small-dim { font-size:12px; fill:#64748B; }
+      .sidebar-section { font-weight: 700; font-size: 14px; fill: #1A253B; letter-spacing: 1px;}
+      .footer-link { font-weight:500; font-size:18px; fill:#334155;}
+      .footer-link-blue { font-weight:500; font-size:18px; fill:#008ED6;}
+      .footer-icon { stroke:#008ED6; stroke-width:2.2; fill:none; }
+      .footer-icon-reset { stroke:#64748B; stroke-width:2.2; fill:none;}
+      .focusable:focus-visible { stroke:#2563EB; stroke-width:2; stroke-linejoin:round; outline:none; }
+    </style>
+  </defs>
+
+  <!-- Sidebar background -->
+  <rect x="0" y="0" width="240" height="1283" fill="#FFFFFF"/>
+
+  <!-- Centered and enlarged logo in sidebar (LOCAL) -->
+  <g>
+    <image href="cookiejar-cookie-center.gif" x="60" y="45" width="120" height="150" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <!-- Sidebar Searchbar (LOCAL icon) -->
+  <g filter="url(#elev1)" aria-label="Search input">
+    <rect x="32" y="210" width="176" height="38" rx="19" fill="#FFF" stroke="#E2E8F0"/>
+    <image href="searchbar-icon-cookie-jar.gif" x="40" y="217" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+    <text class="small-dim" x="72" y="234" fill="#64748B">Search…</text>
+    <rect x="164" y="219" width="36" height="20" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+    <text class="small" x="182" y="234" fill="#64748B" text-anchor="middle">⌘K</text>
+  </g>
+
+  <!-- Sidebar Navigation -->
+  <g>
+    <!-- MAIN -->
+    <text class="sidebar-section" x="36" y="270">MAIN</text>
+    <g>
+      <rect x="32" y="286" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="300" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="305">Bakery Control Panel</text>
+    </g>
+    <g>
+      <rect x="32" y="326" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="340" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="345">Review Reports</text>
+    </g>
+    <g>
+      <rect x="32" y="366" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="380" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="385">Documentation</text>
+    </g>
+
+    <!-- MANAGE -->
+    <text class="sidebar-section" x="36" y="420">MANAGE</text>
+    <g>
+      <rect x="32" y="436" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="450" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="455">Cookie Banner Settings</text>
+    </g>
+    <g>
+      <rect x="32" y="476" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="490" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="495">Consent Logs</text>
+    </g>
+    <g>
+      <rect x="32" y="516" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="530" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="535">Languages</text>
+    </g>
+    <g>
+      <rect x="32" y="556" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="570" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="575">Advanced Settings</text>
+    </g>
+    <g>
+      <rect x="32" y="596" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="610" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="615">Settings</text>
+    </g>
+
+    <!-- SUPPORT -->
+    <text class="sidebar-section" x="36" y="660">SUPPORT</text>
+    <g>
+      <rect x="32" y="676" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="690" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="695">Community</text>
+    </g>
+    <g>
+      <rect x="32" y="716" width="28" height="28" rx="7" fill="#FFFFFF"/>
+      <circle cx="46" cy="730" r="10" fill="url(#geoGrad)"/>
+      <text class="small" x="70" y="735">Help &amp; Support</text>
+    </g>
+  </g>
+
+  <!-- Main admin content area: Section X -->
+  <g>
+    <rect x="260" y="70" width="1040" height="750" rx="38" fill="#fff" filter="url(#shadow)"/>
+    <text class="title" x="300" y="120" font-size="28">Section X</text>
+
+    <rect x="320" y="180" width="900" height="300" rx="24" fill="#FAFBFB"/>
+    <text class="label" x="340" y="220" font-size="18">Unified Admin Analytics &amp; Controls Area</text>
+    <text class="small" x="340" y="270" font-size="15">All dashboard content, controls, stats, and tools can be placed here.</text>
+
+    <g>
+      <rect x="340" y="310" width="200" height="90" rx="12" class="surface-alt"/>
+      <text class="label" x="355" y="340">Quick KPI</text>
+      <text class="value" x="355" y="370">12,345</text>
+    </g>
+    <g>
+      <rect x="570" y="310" width="200" height="90" rx="12" class="surface-alt"/>
+      <text class="label" x="585" y="340">Page Views</text>
+      <text class="value" x="585" y="370">456,789</text>
+    </g>
+
+    <!-- Remastered Footer aligned to Section X -->
+    <g>
+      <rect x="320" y="600" width="900" height="58" rx="0"  fill="#FFF" />
+
+      <!-- Left: Manage Cookies Banner (LOCAL icon) -->
+      <g transform="translate(262, 715)" aria-label="Manage Cookies Banner">
+        <circle cx="160" cy="18" r="18" stroke="#000000" stroke-width="2.5" fill="none"/>
+        <image href="cookiejar-cookie-center.gif" x="148" y="7" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <text x="160" y="52" class="footer-link" text-anchor="middle">Manage Cookies Banner</text>
+      </g>
+
+      <!-- Right: Import/Export and Reset -->
+      <g transform="translate(850,750)">
+        <g>
+          <polyline class="footer-icon" points="0,8 16,22" />
+          <circle cx="0" cy="8" r="3" fill="#008ED6"/>
+          <circle cx="16" cy="22" r="3" fill="#008ED6"/>
+        </g>
+        <text class="footer-link" x="28" y="15">Import / Export Settings</text>
+        <g transform="translate(230,0)">
+          <path class="footer-icon-reset" d="M8,18 a10,10 0 1,1 4,2" />
+          <polyline class="footer-icon-reset" points="12,18 16,18 16,14" />
+          <text class="footer-link" x="28" y="15">Reset to Default</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer copyright -->
+  <text class="small-dim" x="300" y="1220">CookieJar WordPress Plugin by DemeWebsolutions.com Software — Proprietary and the intellectual property of My Deme, Llc. © 2025 All Rights Reserved.</text>
+</svg>

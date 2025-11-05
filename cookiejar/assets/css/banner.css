@@ -1,0 +1,237 @@
+/* Consent Banner Styles (tint backdrop retained, click isolation removed) */
+
+.dwic-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.30); /* light tint, no blur */
+  z-index: 99998;
+  animation: dwicFadeIn .25s ease;
+  pointer-events: none; /* Allow clicks to pass through (no blocking) */
+}
+
+@keyframes dwicFadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.dwic-bar {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 520px;
+  width: 97vw;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.2em 1.2em 1em 1.2em;
+  z-index: 99999;
+  background: #ffffff;
+  transition: box-shadow .2s, background .2s;
+  font-size: 14px;
+  color: #151515b5;
+  pointer-events: auto;
+}
+.dwic-bar.dwic-dark {
+  background: #151515b5;
+  box-shadow: 0 10px 48px rgba(0,0,0,0.45);
+  color: #f5f5f5;
+}
+.dwic-bottom { bottom: 30px; }
+.dwic-top { top: 30px; }
+.dwic-center { top: 50%; transform: translate(-50%, -50%); }
+
+.dwic-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.dwic-msg {
+  font-size: 1.05em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.dwic-actions {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0.7em;
+  flex-wrap: wrap;
+}
+.dwic-btn {
+  padding: 0.55em 1.25em;
+  border-radius: 6px;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95em;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  margin-bottom: 0.5em;
+  transition: background .18s, color .18s, border .18s, outline-color .18s;
+  position: relative;
+  z-index: 2;
+}
+.dwic-btn:hover {
+  outline: 2px solid #004d80;
+  outline-offset: 2px;
+}
+
+.dwic-btn.dwic-accept,
+.dwic-btn.dwic-reject {
+  background: #fff;
+  color: #008ed6;
+  border: 1px solid #d0d5d9;
+}
+.dwic-bar.dwic-dark .dwic-btn.dwic-accept,
+.dwic-bar.dwic-dark .dwic-btn.dwic-reject {
+  background: rgba(255,255,255,0.07);
+  color: #57bff3;
+  border: 1px solid #333;
+}
+
+.dwic-btn.dwic-prefs,
+.dwic-btn.dwic-save {
+  background: #008ed6;
+  color: #fff;
+  border: none;
+}
+.dwic-btn.dwic-prefs:hover,
+.dwic-btn.dwic-save:hover {
+  background: #0075b2;
+}
+
+.dwic-btn.dwic-accept:hover,
+.dwic-btn.dwic-reject:hover {
+  background: #f3f7fa;
+}
+
+.dwic-prefs-panel {
+  margin-top: 1em;
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  padding-top: 0.8em;
+}
+
+.dwic-always-on-note {
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #008ed6;
+  margin: 0 0 10px 2px;
+  text-align: left;
+}
+
+.dwic-cat {
+  margin-bottom: 0.7em;
+  text-align: left;
+}
+.dwic-cat label {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.dwic-desc {
+  font-size: 1em;
+  color: #444;
+  display: block;
+  margin-left: 54px;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.dwic-bar.dwic-dark .dwic-desc { color: #d1d1d1; }
+
+/* Do Not Sell (opt-out) row styling */
+.dwic-cat[data-catwrap="donotsell"] {
+  border: transparent;
+  background:transparent;
+}
+.dwic-bar.dwic-dark .dwic-cat[data-catwrap="donotsell"] {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Toggle */
+.dwic-toggle {
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+  background: #b3b3b3;
+  border-radius: 20px;
+  position: relative;
+  flex-shrink: 0;
+  transition: background .25s;
+}
+.dwic-cat input[type="checkbox"] { display: none; }
+.dwic-cat input[type="checkbox"]:checked + .dwic-toggle {
+  background: #008ed6;
+}
+.dwic-toggle:after {
+  content:"";
+  position:absolute;
+  top:2px;
+  left:2px;
+  width:16px;
+  height:16px;
+  background:#fff;
+  border-radius:50%;
+  transition: transform .25s;
+}
+.dwic-cat input[type="checkbox"]:checked + .dwic-toggle:after {
+  transform: translateX(18px);
+}
+
+.dwic-logo {
+  width: 46px;
+  height: 46px;
+  background: #008ed6;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: 0 auto 14px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.dwic-logo img { width: 30px; height: 30px; display:block; }
+
+.dwic-footer {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 0.85em;
+  color: #888;
+  width: 100%;
+}
+.dwic-bar.dwic-dark .dwic-footer { color: #b5b5b5; }
+
+/* Scroll lock (optional). Remove if you want page to scroll while banner shown. */
+body.dwic-consent-active {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .dwic-bar {
+    left: 0;
+    transform: none;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    padding: 1em 0.7em 0.8em 0.7em;
+  }
+  .dwic-inner { padding:0; }
+  .dwic-actions {
+    flex-direction: column;
+    gap: 0.55em;
+    width: 100%;
+  }
+  .dwic-btn {
+    width:100%;
+    margin-bottom:0;
+  }
+  .dwic-desc {
+    margin-left: 46px;
+  }
+}

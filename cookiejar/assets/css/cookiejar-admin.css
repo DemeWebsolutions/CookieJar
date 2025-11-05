@@ -1,0 +1,2681 @@
+/* CookieJar Admin UI - Updated: 2024-10-09 */
+
+/* Unified Interactive Elements - Color Swatch Style */
+.cookiejar-color-swatch,
+.cookiejar-color-trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid var(--cookiejar-border, #E2E8F0);
+    border-radius: 6px;
+    background: var(--cookiejar-card, #FFFFFF);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 36px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.cookiejar-color-swatch:hover,
+.cookiejar-color-trigger:hover {
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 2px 4px rgba(0, 142, 214, 0.1);
+    transform: translateY(-1px);
+}
+
+.cookiejar-color-swatch:focus,
+.cookiejar-color-trigger:focus {
+    outline: none;
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 0 0 3px rgba(0, 142, 214, 0.1);
+}
+
+/* WordPress Core Select Styling */
+.cookiejar-wrap .wp-core-ui select {
+    color: #2c3338;
+    border-color: #8c8f94;
+    box-shadow: none;
+    border-radius: 6px;
+    padding: 2px 10px;
+    min-height: 30px;
+    max-width: 25rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #f6f7f7 url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat right 5px top 55%;
+    background-size: 16px 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #dcdcde;
+    font-size: 14px;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cookiejar-wrap .wp-core-ui select:hover {
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 2px 4px rgba(0, 142, 214, 0.1);
+    transform: translateY(-1px);
+}
+
+.cookiejar-wrap .wp-core-ui select:focus {
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 0 0 1px var(--cookiejar-blue, #008ED6);
+    outline: none;
+}
+
+/* Policy Dropdown Styling */
+#cookiejar-policy-page.cookiejar-color-swatch {
+    color: #2c3338;
+    border-color: #8c8f94;
+    box-shadow: none;
+    border-radius: 6px;
+    padding: 2px 10px;
+    min-height: 30px;
+    max-width: 25rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #f6f7f7 url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat right 5px top 55%;
+    background-size: 16px 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #dcdcde;
+    font-size: 14px;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#cookiejar-policy-page.cookiejar-color-swatch:focus {
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 0 0 1px var(--cookiejar-blue, #008ED6);
+    outline: none;
+}
+
+/* Prompt Trigger Styling */
+.cookiejar-prompt-trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid var(--cookiejar-border, #E2E8F0);
+    border-radius: 6px;
+    background: var(--cookiejar-card, #FFFFFF);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 36px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4;
+    justify-content: space-between;
+}
+
+.cookiejar-prompt-trigger:hover {
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 2px 4px rgba(0, 142, 214, 0.1);
+    transform: translateY(-1px);
+}
+
+.cookiejar-prompt-trigger:focus {
+    outline: none;
+    border-color: var(--cookiejar-blue, #008ED6);
+    box-shadow: 0 0 0 3px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-prompt-display {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--cookiejar-deep, #00253B);
+}
+
+.cookiejar-edit-indicator {
+    margin-left: 8px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.cookiejar-prompt-trigger:hover .cookiejar-edit-indicator {
+    opacity: 1;
+}
+
+/* Active/Selected States */
+.cookiejar-color-swatch:active,
+.cookiejar-color-trigger:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled State */
+.cookiejar-color-swatch:disabled,
+.cookiejar-color-trigger:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+
+.cookiejar-color-swatch:disabled:hover,
+.cookiejar-color-trigger:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--cookiejar-border, #E2E8F0);
+}
+.cookiejar-wrap {
+  --cookiejar-blue:#008ED6;
+  --cookiejar-deep:#00253B;
+  --cookiejar-gray:#64748B;
+  --cookiejar-border:#E2E8F0;
+  --cookiejar-card:#FFFFFF;
+  --cookiejar-red:#DC2626;
+  --cookiejar-watermark: url('../img/CookieJar.Cookie.Center.gif');
+  --cookiejar-title-svg: none;
+
+  /* Design tokens */
+  --radius-card: 10px;
+  --space-3: 6px;
+  --shadow-surface: 0 2px 6px rgba(15,23,42,0.10), 0 6px 12px rgba(15,23,42,0.06);
+}
+
+
+/* Wizard Progress Steps */
+.cookiejar-wizard-wrap .progress-steps .step.completed {
+    color: rgba(109, 117, 125, 0.48);
+}
+
+/* WordPress Admin Menu Icons - Custom SVG */
+#toplevel_page_cookiejar-dashboard .wp-menu-image,
+#toplevel_page_cookiejar-wizard .wp-menu-image {
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#toplevel_page_cookiejar-dashboard .wp-menu-image img,
+#toplevel_page_cookiejar-wizard .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    object-fit: contain !important;
+    display: block !important;
+    padding: 14px 0px 0px 15px;
+}
+
+/* Handle SVG icons directly */
+#toplevel_page_cookiejar-dashboard .wp-menu-image svg,
+#toplevel_page_cookiejar-wizard .wp-menu-image svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    fill: currentColor !important;
+}
+
+/* Hover and active states */
+#toplevel_page_cookiejar-dashboard:hover .wp-menu-image img,
+#toplevel_page_cookiejar-dashboard.current .wp-menu-image img,
+#toplevel_page_cookiejar-wizard:hover .wp-menu-image img,
+#toplevel_page_cookiejar-wizard.current .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* Health status styling */
+.cookiejar-health-status {
+    padding: 2px !important;
+    border-radius: 8px !important;
+    border: 2px solid !important;
+}
+
+.cookiejar-status-warning {
+    background: #fffbeb !important;
+    border-color: #f59e0b !important;
+    color: #92400e !important;
+    padding: 2px !important;
+}
+
+/* Additional status variants */
+.cookiejar-status-success {
+    background: #f0fdf4 !important;
+    border-color: #22c55e !important;
+    color: #166534 !important;
+    padding: 2px !important;
+}
+
+.cookiejar-status-error {
+    background: #fef2f2 !important;
+    border-color: #ef4444 !important;
+    color: #991b1b !important;
+    padding: 2px !important;
+}
+
+/* Accordion styling */
+.cookiejar-settings-accordion {
+    margin-top: 20px;
+}
+
+.cookiejar-accordion-item {
+    border: 1px solid var(--cookiejar-border);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.cookiejar-accordion-header {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.cookiejar-accordion-header:hover {
+    background: #e9ecef;
+}
+
+.cookiejar-accordion-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cookiejar-deep);
+}
+
+.cookiejar-accordion-toggle {
+    font-size: 14px;
+    color: var(--cookiejar-gray);
+    transition: transform 0.2s ease;
+}
+
+.cookiejar-accordion-content {
+    padding: 20px;
+    background: white;
+    display: none;
+}
+
+.cookiejar-accordion-content p {
+    margin: 0 0 15px 0;
+    color: var(--cookiejar-gray);
+    line-height: 1.5;
+}
+
+.cookiejar-pro-notice {
+    font-size: 12px;
+    color: #e67e22;
+    font-style: italic;
+    margin: 5px 0 10px 0;
+}
+
+/* Plan-specific styling */
+.cookiejar-plan-basic .pro-feature {
+  opacity: 0.6;
+  position: relative;
+}
+
+.cookiejar-plan-basic .pro-feature::after {
+  content: "PRO";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ffc107;
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.cookiejar-pill-upgrade {
+  background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%) !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+/* Settings Page Styles */
+.settings-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--cookiejar-border);
+}
+
+.settings-section h4 {
+  margin: 0 0 10px 0;
+  color: var(--cookiejar-deep);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.settings-section p {
+  margin: 0 0 15px 0;
+  color: var(--cookiejar-gray);
+  font-size: 14px;
+}
+
+.import-area {
+  margin-top: 15px;
+}
+
+.import-area textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid var(--cookiejar-border);
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.import-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.settings-status {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.settings-status.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.settings-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.settings-status.loading {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Default fade start (can be px or %) for CookieJar pages */
+body.toplevel_page_cookiejar-dashboard,
+body.cookiejar-dashboard_page_cookiejar-control {
+  --wpwrap-fade-start: 250px;
+}
+
+/* Control panel uses 240px internal sidebar */
+body.cookiejar-dashboard_page_cookiejar-control { --wpwrap-fade-start: 240px; }
+
+/* Content area gradient (both pages) */
+#wpcontent {
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, #ffffff 100%);
+  height: auto;
+}
+
+/* Optional: keep your existing CookieJar-specific wrapper gradient if desired */
+#wpwrap {
+  background: linear-gradient(to left, rgba(255,255,255,0) 250px, #ffffff 100%) !important;
+}
+
+.cookiejar-title {
+  margin: 16px 0 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* SVG wordmark title */
+.cookiejar-title--svg {
+  position: relative;
+  background-image: var(--cookiejar-title-svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 36px;
+  min-height: 44px;
+  line-height: 44px;
+  color: transparent;
+}
+.cookiejar-title--svg .screen-reader-text {
+  position: absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Toolbar */
+.cookiejar-toolbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin: 8px 0 18px; }
+.cookiejar-pill { background:#fff; border:1px solid var(--cookiejar-border); border-radius:18px; padding:6px 12px; cursor:pointer; }
+.cookiejar-pill:hover { box-shadow:0 1px 4px rgba(0,0,0,.08); }
+.cookiejar-pill.cookiejar-pill-link { font-weight:600; }
+
+/* Search */
+.cookiejar-search {
+  margin-left:auto; position:relative; display:flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--cookiejar-border); border-radius:999px; padding:6px 8px; box-sizing:border-box;
+}
+.cookiejar-search input.cookiejar-search-input { border:none; outline:none; width:220px; font-size:13px; min-width:0; }
+
+/* Search button (updated) */
+.cookiejar-search-btn {
+  margin-left: auto;
+  background: #F9FBFD;
+  color: #fff;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  min-width: 50px;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15,23,42,0.10), 0 6px 12px rgba(15,23,42,0.06);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookiejar-search-btn:hover { background:#F3F7FB; }
+.cookiejar-search-btn:focus { outline:none; }
+.cookiejar-search-btn:focus-visible { outline:none; box-shadow: 0 0 0 2px rgba(0,142,214,0.15), 0 2px 6px rgba(15,23,42,0.10), 0 6px 12px rgba(15,23,42,0.06); }
+.cookiejar-search-btn .cookiejar-search-icon { position:static; width:22px; height:22px; display:block; object-fit:contain; opacity:.9; }
+
+/* Logo */
+.cookiejar-logo { height:28px; margin-left:4px; }
+
+/* Suggestions */
+.cookiejar-search-suggestions {
+  position:absolute; left:0; top:calc(100% + 6px); width:100%;
+  background:#fff; border:1px solid var(--cookiejar-border); border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08); overflow:hidden; z-index:1000;
+}
+.cookiejar-suggest-item { padding:10px 12px; font-size:13px; display:flex; align-items:center; gap:8px; cursor:pointer; }
+.cookiejar-suggest-item:hover, .cookiejar-suggest-item.active { background:#F8FAFC; }
+.cookiejar-suggest-item .hint { color:#64748B; font-size:12px; margin-left:auto; }
+
+/* Animated placeholder overlay */
+.cookiejar-search-ghost {
+  position:absolute; left:12px; right:60px; top:50%; transform:translateY(-50%);
+  color:#94A3B8; font-size:13px; line-height:1; pointer-events:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; opacity:.9;
+}
+.cookiejar-search-ghost .cursor { display:inline-block; width:1ch; color:#94A3B8; animation: cookiejar-cursor-blink 1s steps(1,end) infinite; }
+@keyframes cookiejar-cursor-blink { 0%,50%{opacity:1} 50.01%,100%{opacity:0} }
+
+/* Layout cards */
+.cookiejar-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.cookiejar-card {
+  background: var(--cookiejar-card);
+  border: 1px solid rgba(225, 231, 240, 0.54);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+.cookiejar-card-head { margin-bottom:8px; text-align:left; }
+.cookiejar-section-title { font-size:14px; color:var(--cookiejar-deep); letter-spacing:.5px; margin:0 0 4px; }
+.cookiejar-section-title-bakery { font-size:14px; font-weight:250; color:var(--cookiejar-deep); letter-spacing:.5px; margin:0 0 4px; }
+
+/* Map + overlay */
+.cookiejar-map { position:relative; border-radius:10px; background:#fff; box-shadow: 0 2px 6px rgba(15,23,42,0.10), 0 6px 12px rgba(15,23,42,0.06); }
+.cookiejar-map img { width:100%; height:auto; border-radius:10px; display:block; border:0; }
+.cookiejar-map-canvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; border-radius:10px; }
+.cookiejar-map-tip { position:absolute; background:#0F172A; color:#fff; padding:6px 8px; border-radius:6px; font-size:12px; pointer-events:none; transform:translate(-50%, calc(-100% - 8px)); white-space:nowrap; box-shadow:0 6px 18px rgba(0,0,0,.15); }
+
+/* Status panel */
+.cookiejar-status-panel { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:8px 16px; margin-top:12px; }
+.cookiejar-status-item { display:flex; align-items:center; gap:8px; font-size:12px; color:#0F172A; }
+.cookiejar-dot { width:15px; height:15px; border-radius:999px; display:inline-block; box-shadow:0 0 0 2px rgba(226,232,240,.9) inset, 0 1px 2px rgba(0,0,0,.08); }
+.cookiejar-dot--blue { background: radial-gradient(circle at 35% 35%, #38BDF8 0%, #008ED6 60%, #00253B 100%); }
+.cookiejar-dot--red  { background: radial-gradient(circle at 35% 35%, #FCA5A5 0%, #DC2626 60%, #00253B 100%); }
+
+/* Quickview */
+.cookiejar-quickview { display:flex; gap:24px; align-items:center; }
+.cookiejar-donut svg { display:block; }
+.arc-accept{stroke:#008ED6;} .arc-partial{stroke:#005E8A;} .arc-reject{stroke:#00253B;} .arc-unres{stroke:#94A3B8;}
+.cookiejar-center-label { fill:#64748B; } .cookiejar-center-val { fill:#0F172A; }
+.cookiejar-legend { display:grid; gap:6px; }
+.cookiejar-legend-dot { width:12px; height:12px; border-radius:50%; display:inline-block; margin-right:8px; vertical-align:middle; }
+.cookiejar-legend .cookiejar-accept{background:#008ED6;} .cookiejar-legend .cookiejar-partial{background:#005E8A;}
+.cookiejar-legend .cookiejar-reject{background:#00253B;} .cookiejar-legend .cookiejar-unres{background:#94A3B8;}
+.cookiejar-legend-pct { margin-left:4px; }
+
+/* Quick KPIs */
+.cookiejar-quick-kpis { margin-top:14px; display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
+.cookiejar-quick-kpi { background:#fff; border:0; border-radius:12px; padding:12px 14px; box-shadow: 0 2px 6px rgba(15,23,42,0.10), 0 6px 12px rgba(15,23,42,0.06); }
+.cookiejar-kpi-label { font-size:12px; color:#64748B; } .cookiejar-kpi-value { font-size:22px; font-weight:700; color:#0F172A; }
+
+/* Activity & Chart grid */
+.cookiejar-wide { margin-top:18px; }
+.cookiejar-trend-grid { display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+
+/* Trend chart container */
+.cookiejar-trend-chart { background:#fff; border-radius:10px; box-shadow: var(--shadow-surface); padding:12px; }
+
+/* Trend chart placeholder with watermark */
+.cookiejar-chart-placeholder {
+  position:relative; min-height:320px; border:0; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#64748B; background:#FAFBFB; overflow:hidden;
+}
+.cookiejar-chart-placeholder::before {
+  content:""; position:absolute; inset:0; background-position:center; background-repeat:no-repeat; background-size:220px; opacity:.08; pointer-events:none; background-image: var(--cookiejar-watermark);
+}
+.cookiejar-chart-note {
+  position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+  font-size:12px; color:#64748B; background:rgba(255,255,255,0.75); padding:4px 8px; border-radius:10px; backdrop-filter:saturate(120%) blur(2px);
+}
+.cookiejar-chart-placeholder:not(.is-empty) .cookiejar-chart-note { display:none; }
+
+/* Recent Activity table */
+.cookiejar-table { border:0; background:transparent; border-radius:0; overflow:visible; padding:0; }
+.cookiejar-thead { background:transparent; margin-bottom:10px; }
+.cookiejar-thead .cookiejar-tr {
+ border-radius:10px; padding:8px 10px;
+}
+/* Dashboard-specific header container styling (uses tokens) */
+.cookiejar-screen-dashboard .cookiejar-thead {
+  background: #F9FBFD;
+  border-radius: var(--radius-card);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-surface);
+}
+.cookiejar-tr { display:grid; grid-template-columns: 1.2fr .6fr .8fr .8fr .6fr; gap:12px; }
+.cookiejar-th {
+  font-weight: 500;
+  color: #00253B;
+  font-size: 12px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  overflow: hidden;
+}
+.cookiejar-tbody { display:grid; gap:10px; }
+.cookiejar-row {
+  background:#fff; border:0; border-radius:10px; padding:10px;
+  box-shadow: var(--shadow-surface);
+  display:grid; grid-template-columns: 1.2fr .6fr .8fr .8fr .6fr; gap:12px;
+}
+.cookiejar-td { font-size:12px; color:#0F172A; }
+
+/* Footer actions */
+.cookiejar-footer-actions {
+  margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap;
+  background:none; border:0; border-radius:14px; padding:10px; box-shadow:none;
+}
+
+/* Control Panel layout */
+.cookiejar-cp { display:grid; grid-template-columns: 240px 1fr; gap:18px; }
+/* Sidebar (updated with shadow) */
+.cookiejar-cp-sidebar {
+    background: var(--cookiejar-card);
+    border: 1px solid rgba(225, 231, 240, 0.54);
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+.cookiejar-cp-logo { display:block; width:120px; height:auto; margin:8px auto 12px; }
+.cookiejar-cp-nav { margin-top:8px; display:grid; gap:8px; }
+.cookiejar-nav-section { font-weight:700; color:#1A253B; font-size:13px; letter-spacing:1px; margin-top:4px; }
+.cookiejar-nav-link { text-decoration:none; color:#0F172A; font-size:12px; padding:6px 8px; border-radius:8px; }
+.cookiejar-nav-link:hover { background:#F8FAFC; }
+.cookiejar-nav-link.active { background:#EFF6FF; color:#0F172A; font-weight:600; }
+
+/* Main surface (updated with shadow) */
+.cookiejar-cp-main  {
+    background: var(--cookiejar-card);
+    border: 1px solid rgba(225, 231, 240, 0.54);
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.cookiejar-lead { font-size:15px; color:#64748B; margin:0 0 6px; }
+.cookiejar-cp-surface { background:#FAFBFB; border-radius:24px; padding:18px; }
+.cookiejar-kpi-mini { display:grid; grid-template-columns:200px 200px; gap:12px; margin-top:16px; }
+.cookiejar-mini-card { background:#F9FBFD; border:1px solid var(--cookiejar-border); padding:12px; border-radius:12px; }
+
+.cookiejar-cp-footer { display:flex; align-items:center; justify-content:space-between; margin-top:16px; border-top:1px solid #F1F5F9; padding-top:12px; }
+.cookiejar-footer-tile { display:flex; align-items:center; }
+.cookiejar-footer-link { text-decoration:none; color:#334155; font-weight:500; margin-left:8px; }
+.cookiejar-footer-link.dim { color:#64748B; }
+.cookiejar-footer-actions-right { display:flex; gap:18px; align-items:center; }
+
+/* Unified WordPress Button Remaster — Consistent with DWIC Button Design */
+
+/* Base button styles */
+.cookiejar-wrap .wp-core-ui .button,
+.cookiejar-wrap .wp-core-ui .button-secondary,
+.cookiejar-wrap .wp-core-ui .button-primary {
+  appearance: none !important;
+  line-height: 1.2 !important;
+  padding: 0.55em 1.25em !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 0.95em !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07) !important;
+  margin-bottom: 0.5em !important;
+  transition: background .18s, color .18s, border .18s, outline-color .18s !important;
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+}
+
+/* Default / Secondary buttons */
+.cookiejar-wrap .wp-core-ui .button,
+.cookiejar-wrap .wp-core-ui .button-secondary {
+  background: #fff !important;
+  color: #008ed6 !important;
+  border: 1px solid rgba(208, 213, 217, 0.41) !important;
+}
+
+/* Primary buttons */
+/* Button presentation update - text-align center */
+.cookiejar-wrap .wp-core-ui .button,
+.cookiejar-wrap .wp-core-ui .button-secondary,
+.cookiejar-wrap .wp-core-ui .button-primary {
+  text-align: center !important;
+}
+
+.cookiejar-wrap .wp-core-ui .button-primary {
+  background: #008ed6 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Hover / Focus states */
+.cookiejar-wrap .wp-core-ui .button:hover,
+.cookiejar-wrap .wp-core-ui .button-secondary:hover {
+  background: #f3f7fa !important;
+  outline: 2px solid #004d80 !important;
+  outline-offset: 2px !important;
+}
+
+.cookiejar-wrap .wp-core-ui .button-primary.focus,
+.cookiejar-wrap .wp-core-ui .button-primary.hover,
+.cookiejar-wrap .wp-core-ui .button-primary:focus,
+.cookiejar-wrap .wp-core-ui .button-primary:hover {
+  background: #135e96 !important;
+  border-color: #135e96 !important;
+  color: #fff !important;
+  outline: 2px solid #004d80 !important;
+  outline-offset: 2px !important;
+}
+
+/* HIGH PRIORITY: Step-by-Step Appearance Settings Styling */
+
+/* FINAL REFINEMENTS: Enhanced Color Picker and Tooltip System */
+
+/* Enhanced Color Picker Container */
+.cookiejar-color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cookiejar-color-edit-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.cookiejar-color-input,
+.cookiejar-color-palette {
+  width: 50px;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-color-input:hover,
+.cookiejar-color-palette:hover {
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-color-text {
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  text-align: center;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-color-text:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-color-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.cookiejar-color-preview:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Enhanced Tooltip System */
+.cookiejar-tooltip {
+  display: inline-block;
+  background: #008ed6;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin-left: 6px;
+  cursor: help;
+  position: relative;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.cookiejar-tooltip:hover {
+  background: #135e96;
+  transform: scale(1.1);
+}
+
+.cookiejar-tooltip[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1d2327;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-left: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-weight: normal;
+  max-width: 250px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.cookiejar-tooltip[title]:hover::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-right-color: #1d2327;
+  margin-left: 3px;
+  z-index: 1001;
+}
+
+/* Font Select Styling */
+.cookiejar-font-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cookiejar-font-select:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+/* Range Container */
+.cookiejar-range-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cookiejar-range-input {
+  flex: 1;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.cookiejar-range-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #008ed6;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.cookiejar-number-input {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cookiejar-font-preview {
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+/* Live Preview Banner */
+.cookiejar-banner-preview {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.cookiejar-preview-banner {
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cookiejar-preview-content p {
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+}
+
+.cookiejar-preview-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cookiejar-preview-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-preview-accept {
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cookiejar-preview-accept:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.cookiejar-preview-settings {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.cookiejar-preview-settings:hover {
+  background: #f8f9fa;
+  border-color: #008ed6;
+}
+
+/* Step-by-Step Section Styling */
+.cookiejar-settings-section h4 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #008ed6;
+  position: relative;
+}
+
+.cookiejar-settings-section h4::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background: #008ed6;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cookiejar-settings-form {
+  counter-reset: step-counter;
+}
+
+.cookiejar-settings-section {
+  counter-increment: step-counter;
+  margin-bottom: 40px;
+  padding-left: 30px;
+  position: relative;
+}
+
+/* Enhanced Form Group Styling */
+.cookiejar-form-group {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-form-group:hover {
+  border-color: #008ed6;
+  box-shadow: 0 2px 8px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.cookiejar-form-group .description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* MEDIUM PRIORITY: Global Audit - Enhanced Interactive Elements */
+
+/* Footer Link Hover Effects */
+.cookiejar-footer-link:hover {
+  color: #008ed6 !important;
+  text-decoration: underline !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.cookiejar-footer-link.hover {
+  color: #008ed6 !important;
+  text-decoration: underline !important;
+}
+
+/* General Link Hover Effects */
+.cookiejar-link:hover {
+  color: #008ed6 !important;
+  text-decoration: underline !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.cookiejar-link.hover {
+  color: #008ed6 !important;
+  text-decoration: underline !important;
+}
+
+/* Enhanced Button Focus States */
+.cookiejar-wrap .button.focused,
+.cookiejar-pill.focused {
+  outline: 2px solid #008ed6 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(0, 142, 214, 0.1) !important;
+}
+
+/* Pill Button Enhancements */
+.cookiejar-pill {
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.cookiejar-pill:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 142, 214, 0.15) !important;
+}
+
+.cookiejar-pill-link:hover {
+  background: #e8f0fe !important;
+  border-color: #008ed6 !important;
+}
+
+.cookiejar-pill-upgrade:hover {
+  background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
+}
+
+/* Navigation Link Enhancements */
+.cookiejar-nav-link {
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.cookiejar-nav-link:hover {
+  color: #008ed6 !important;
+  background: rgba(0, 142, 214, 0.05) !important;
+  transform: translateX(4px) !important;
+}
+
+.cookiejar-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: #008ed6;
+  transition: width 0.2s ease;
+}
+
+.cookiejar-nav-link:hover::before {
+  width: 4px;
+}
+
+/* Accordion Toggle Enhancements */
+.cookiejar-accordion-toggle {
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-toggle {
+  transform: rotate(180deg) !important;
+}
+
+.cookiejar-accordion-header:hover .cookiejar-accordion-toggle {
+  color: #008ed6 !important;
+}
+
+/* Form Element Enhancements */
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 2px solid #008ed6 !important;
+  outline-offset: 2px !important;
+}
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus {
+  outline: 2px solid #008ed6 !important;
+  outline-offset: 1px !important;
+  box-shadow: 0 0 0 3px rgba(0, 142, 214, 0.1) !important;
+}
+
+/* Loading States */
+.cookiejar-wrap .button:disabled,
+.cookiejar-pill:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Success/Error States */
+.cookiejar-status.success {
+  border-left: 4px solid #28a745 !important;
+}
+
+.cookiejar-status.error {
+  border-left: 4px solid #dc3545 !important;
+}
+
+.cookiejar-status.warning {
+  border-left: 4px solid #ffc107 !important;
+}
+
+.cookiejar-status.info {
+  border-left: 4px solid #17a2b8 !important;
+}
+.cookiejar-language-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cookiejar-language-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cookiejar-language-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-language-option:hover {
+  background: #e8f0fe;
+  border-color: #008ed6;
+}
+
+.cookiejar-language-option input[type="checkbox"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.cookiejar-language-label {
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.cookiejar-language-example {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.cookiejar-translation-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.cookiejar-translation-textarea:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-translation-textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cookiejar-color-picker-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .cookiejar-range-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .cookiejar-preview-buttons {
+    flex-direction: column;
+  }
+  
+  .cookiejar-settings-section {
+    padding-left: 20px;
+  }
+  
+  .cookiejar-settings-section h4::before {
+    left: -25px;
+  }
+  
+  .cookiejar-language-checkboxes {
+    grid-template-columns: 1fr;
+  }
+  
+  .cookiejar-language-option {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .cookiejar-language-example {
+    align-self: flex-end;
+  }
+}
+
+/* LOW PRIORITY: Refined Accordion Components Design */
+
+/* Modern Accordion Styling */
+.cookiejar-settings-accordion {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cookiejar-accordion-item {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cookiejar-accordion-item:hover {
+  border-color: #008ed6;
+  box-shadow: 0 2px 8px rgba(0, 142, 214, 0.1);
+  transform: translateY(-1px);
+}
+
+.cookiejar-accordion-item.open {
+  border-color: #008ed6;
+  box-shadow: 0 4px 12px rgba(0, 142, 214, 0.15);
+}
+
+.cookiejar-accordion-header {
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cookiejar-accordion-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #008ed6;
+  transition: width 0.3s ease;
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-header::before {
+  width: 4px;
+}
+
+.cookiejar-accordion-header:hover {
+  background: linear-gradient(135deg, #e8f0fe 0%, #f0f8ff 100%);
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-header {
+  background: linear-gradient(135deg, #e8f0fe 0%, #f0f8ff 100%);
+}
+
+.cookiejar-accordion-header h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d2327;
+  transition: color 0.3s ease;
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-header h5 {
+  color: #008ed6;
+}
+
+.cookiejar-accordion-toggle {
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: color(display-p3 0.2417 0.5469 0.8157);
+  cursor: pointer;
+  user-select: none;
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-toggle {
+  transform: rotate(180deg);
+  background: rgba(0, 142, 214, 0.1);
+  color: #008ed6;
+}
+
+.cookiejar-accordion-header:hover .cookiejar-accordion-toggle {
+  background: rgba(0, 142, 214, 0.15);
+  color: #008ed6;
+}
+
+.cookiejar-accordion-content {
+  padding: 0 24px 24px 24px;
+  background: #fff;
+  display: none;
+  animation: accordionSlideDown 0.3s ease-out;
+}
+
+.cookiejar-accordion-item.open .cookiejar-accordion-content {
+  display: block;
+  animation: accordionSlideDown 0.3s ease-out;
+}
+
+@keyframes accordionSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cookiejar-accordion-content p {
+  margin: 0 0 16px 0;
+  color: #646970;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.cookiejar-accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Enhanced Typography for Accordion Content */
+.cookiejar-accordion-content h6 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d2327;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cookiejar-accordion-content ul {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+}
+
+.cookiejar-accordion-content li {
+  margin-bottom: 8px;
+  color: #646970;
+  line-height: 1.5;
+}
+
+/* Responsive Accordion */
+@media (max-width: 768px) {
+  .cookiejar-accordion-header {
+    padding: 16px 20px;
+  }
+  
+  .cookiejar-accordion-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .cookiejar-accordion-header h5 {
+    font-size: 15px;
+  }
+  
+  .cookiejar-accordion-toggle {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+
+/* CHECKBOX STYLE CONSISTENCY - Form Inputs */
+.cookiejar-settings-form input[type="checkbox"] {
+  border: 1px solid #8c8f94 !important;
+  border-radius: 4px !important;
+  background: #fff;
+  color: #50575e;
+  cursor: pointer;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem !important;
+  min-width: 1rem;
+  margin: -.25rem .25rem 0 0;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+  transition: .05s border-color ease-in-out !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cookiejar-settings-form input[type="checkbox"]:checked {
+  background: transparent;
+  border-color: #008ed6;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 10 4-4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+/* MINIMUM REQUIREMENTS WARNING BANNER */
+.cookiejar-requirements-warning {
+  margin-top: 12px;
+  border: 1px solid #f0b849;
+  border-radius: 6px;
+  background: #fff8e1;
+  overflow: hidden;
+}
+
+.cookiejar-warning-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cookiejar-warning-header:hover {
+  background: rgba(240, 184, 73, 0.1);
+}
+
+.cookiejar-warning-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.cookiejar-warning-text {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a6914;
+}
+
+.cookiejar-warning-toggle {
+  font-size: 12px;
+  color: #8a6914;
+  transition: transform 0.3s ease;
+}
+
+.cookiejar-warning-details {
+  padding: 12px;
+  border-top: 1px solid #f0b849;
+  background: #fff;
+}
+
+.cookiejar-requirements-list {
+  margin-bottom: 12px;
+}
+
+.cookiejar-requirement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.cookiejar-requirement-item:last-child {
+  border-bottom: none;
+}
+
+.cookiejar-requirement-item strong {
+  font-size: 13px;
+  color: #1d2327;
+}
+
+.cookiejar-requirement-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.cookiejar-requirement-status.pass {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.cookiejar-requirement-status.fail {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.cookiejar-requirement-item small {
+  font-size: 11px;
+  color: #646970;
+  margin-left: 8px;
+}
+
+.cookiejar-warning-actions {
+  text-align: right;
+}
+
+.cookiejar-warning-actions .button {
+  font-size: 12px;
+  padding: 4px 12px;
+  min-height: auto;
+}
+
+/* FINAL REFINEMENTS: Enhanced Status Management and Form Actions */
+
+/* Enhanced Status Management */
+.wizard-status {
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.wizard-status.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-left-color: #28a745;
+}
+
+.wizard-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-left-color: #dc3545;
+}
+
+.wizard-status.loading {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+  border-left-color: #17a2b8;
+}
+
+.wizard-status.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+  border-left-color: #17a2b8;
+}
+
+/* Enhanced Form Actions & Wizard Navigation */
+.cookiejar-form-actions,
+.wizard-navigation {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(208, 213, 217, 0.5);
+}
+
+.cookiejar-form-actions .button,
+.wizard-navigation .button {
+  min-width: 140px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-form-actions .button:hover,
+.wizard-navigation .button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 142, 214, 0.15);
+}
+
+/* Enhanced Card Styling */
+.cookiejar-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 28px;
+  margin-bottom: 22px;
+  transition: all 0.3s ease;
+}
+
+.cookiejar-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.cookiejar-section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #084b74 0%, #008ed6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #084b74; /* Fallback for browsers that don't support background-clip */
+}
+
+.cookiejar-lead {
+  font-size: 15px;
+  color: #64748B;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Enhanced Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group .description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* VERSION 3 FINAL REFINEMENTS: Enhanced Banner Preview Styling */
+
+/* Enhanced Banner Preview */
+.cookiejar-banner-preview {
+  margin-top: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cookiejar-banner-preview:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cookiejar-preview-banner {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.cookiejar-preview-content p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.cookiejar-preview-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cookiejar-preview-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+.cookiejar-preview-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.cookiejar-preview-accept {
+  color: #fff;
+  background-color: #008ed6;
+}
+
+.cookiejar-preview-accept:hover {
+  background-color: #135e96;
+}
+
+.cookiejar-preview-settings {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.cookiejar-preview-settings:hover {
+  background: #f8f9fa;
+  border-color: #008ed6;
+  color: #008ed6;
+}
+
+/* Enhanced Card Head Styling */
+.cookiejar-card-head {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(208, 213, 217, 0.3);
+}
+
+.cookiejar-card-head .cookiejar-section-title {
+  margin-bottom: 8px;
+}
+
+.cookiejar-card-head .cookiejar-lead {
+  margin-bottom: 0;
+}
+
+/* COMPLIANCE BUBBLE TOGGLES - Wizard-Aligned Design */
+
+.cookiejar-bubble-toggles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.cookiejar-bubble-toggle {
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cookiejar-bubble-toggle:hover {
+  border-color: #008ed6;
+  box-shadow: 0 4px 12px rgba(0, 142, 214, 0.1);
+  transform: translateY(-2px);
+}
+
+.cookiejar-bubble-toggle.cookiejar-pro-locked {
+  opacity: 0.6;
+  background: #f8f9fa;
+}
+
+.cookiejar-bubble-toggle.cookiejar-pro-locked:hover {
+  border-color: #ffc107;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+}
+
+.cookiejar-bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cookiejar-bubble-header h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.cookiejar-bubble-switch {
+  position: relative;
+}
+
+.cookiejar-bubble-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cookiejar-bubble-label {
+  display: block;
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cookiejar-bubble-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.cookiejar-bubble-input:checked + .cookiejar-bubble-label {
+  background: #008ed6;
+}
+
+.cookiejar-bubble-input:checked + .cookiejar-bubble-label .cookiejar-bubble-slider {
+  transform: translateX(24px);
+}
+
+.cookiejar-bubble-description {
+  margin: 0 0 12px 0;
+  color: #64748B;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.cookiejar-bubble-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cookiejar-status-indicator {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cookiejar-status-indicator.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.cookiejar-status-indicator.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.cookiejar-pro-badge {
+  background: #ffc107;
+  color: #856404;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cookiejar-bubble-updated {
+  animation: bubblePulse 1s ease-in-out;
+}
+
+@keyframes bubblePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design for Bubble Toggles */
+@media (max-width: 768px) {
+  .cookiejar-bubble-toggles {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .cookiejar-bubble-toggle {
+    padding: 15px;
+  }
+  
+  .cookiejar-bubble-header h5 {
+    font-size: 16px;
+  }
+}
+
+/* Phase 1: Form Styling Enhancement - Exact Wizard Match */
+.cookiejar-settings-form .form-group {
+  margin-bottom: 25px;
+}
+
+.cookiejar-settings-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.cookiejar-settings-form input[type="text"],
+.cookiejar-settings-form input[type="url"],
+.cookiejar-settings-form input[type="number"],
+.cookiejar-settings-form textarea,
+.cookiejar-settings-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cookiejar-settings-form input[type="text"]:focus,
+.cookiejar-settings-form input[type="url"]:focus,
+.cookiejar-settings-form input[type="number"]:focus,
+.cookiejar-settings-form textarea:focus,
+.cookiejar-settings-form select:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+.cookiejar-settings-form input[type="color"] {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cookiejar-settings-form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.cookiejar-settings-form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 0;
+}
+
+.cookiejar-settings-form fieldset legend {
+  font-weight: 600;
+  color: #333;
+  padding: 0 10px;
+}
+
+.cookiejar-settings-form fieldset label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.cookiejar-settings-form fieldset label:last-child {
+  margin-bottom: 0;
+}
+
+.cookiejar-settings-form .description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.cookiejar-settings-form fieldset .description {
+  font-weight: normal;
+  color: #888;
+}
+
+/* Phase 2: Card Layout Enhancement */
+.cookiejar-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.cookiejar-card h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cookiejar-card p {
+  margin: 0 0 25px 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Phase 3: Button Integration */
+.cookiejar-settings-form .button,
+.cookiejar-settings-form .button-primary,
+.cookiejar-settings-form .button-secondary {
+  margin-bottom: 0.5em;
+}
+
+.cookiejar-form-actions {
+  display: flex;
+  gap: 1em;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(208, 213, 217, 0.5);
+}
+
+/* Phase 4: Section Organization */
+.cookiejar-settings-section {
+  margin-bottom: 30px;
+}
+
+.cookiejar-settings-section h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.cookiejar-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.cookiejar-form-group {
+  margin-bottom: 20px;
+}
+
+.cookiejar-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.cookiejar-form-group input,
+.cookiejar-form-group select,
+.cookiejar-form-group textarea {
+  /* width: 100%; */
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cookiejar-form-group input:focus,
+.cookiejar-form-group select:focus,
+.cookiejar-form-group textarea:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+/* Phase 5: Status & Feedback Enhancement */
+.cookiejar-status {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.cookiejar-status.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.cookiejar-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.cookiejar-status.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.cookiejar-status.warning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+/* Enhanced Settings Overview - Wizard-Aligned */
+.cookiejar-settings-overview {
+  max-width: 100%;
+}
+
+.cookiejar-settings-overview .cookiejar-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Wizard-Level Animations and Transitions */
+.cookiejar-settings-form .form-group {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.cookiejar-settings-form .form-group:nth-child(1) { animation-delay: 0.1s; }
+.cookiejar-settings-form .form-group:nth-child(2) { animation-delay: 0.2s; }
+.cookiejar-settings-form .form-group:nth-child(3) { animation-delay: 0.3s; }
+.cookiejar-settings-form .form-group:nth-child(4) { animation-delay: 0.4s; }
+
+/* Wizard-Level Accessibility Features */
+.cookiejar-settings-overview:focus-within {
+  outline: 2px solid #008ed6;
+  outline-offset: 2px;
+}
+
+.cookiejar-settings-form input:focus,
+.cookiejar-settings-form textarea:focus,
+.cookiejar-settings-form select:focus {
+  outline: 2px solid #008ed6;
+  outline-offset: 1px;
+}
+
+/* Wizard-Level Color Picker and Modal Styling */
+.cookiejar-color-swatch { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
+  padding: 2px 10px; 
+  background: #f6f7f7; 
+  border: 1px solid #dcdcde; 
+  border-radius: 6px; 
+  font-size: 12px; 
+  cursor: default; 
+}
+
+.cookiejar-color-swatch.is-editable { 
+  cursor: pointer; 
+}
+
+.cookiejar-color-swatch.is-editable:hover { 
+  background: #e8f0fe; 
+  border-color: #1a73e8; 
+}
+
+.cookiejar-color-dot { 
+  width: 14px; 
+  height: 14px; 
+  border-radius: 50%; 
+  border: 1px solid rgba(0,0,0,0.1); 
+  display: inline-block; 
+}
+
+.cookiejar-color-trigger {
+  cursor: pointer !important;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-color-trigger:hover {
+  background: #e8f0fe !important;
+  border-color: #1a73e8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 115, 232, 0.15);
+}
+
+/* Wizard-Level Modal Styling */
+.cookiejar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookiejar-modal-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.cookiejar-modal-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookiejar-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.cookiejar-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #646970;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.cookiejar-modal-close:hover {
+  background: #f0f0f1;
+  color: #1d2327;
+}
+
+.cookiejar-modal-body {
+  padding: 24px;
+}
+
+.cookiejar-modal-footer {
+  padding: 16px 24px 24px;
+  border-top: 1px solid #e1e5e9;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* Wizard-Level Form Elements in Modals */
+.cookiejar-modal-content .form-group {
+  margin-bottom: 0;
+}
+
+.cookiejar-modal-content .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.cookiejar-modal-content .form-group .description {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #646970;
+  line-height: 1.4;
+}
+
+.cookiejar-modal-content select.regular-text {
+  width: 100%;
+  max-width: none;
+}
+
+.cookiejar-modal-content textarea.large-text {
+  width: 100%;
+  max-width: none;
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Wizard-Level Disabled States */
+.cookiejar-settings-form input[disabled],
+.cookiejar-settings-form select[disabled],
+.cookiejar-settings-form textarea[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Wizard-Level Pro Tier Indicators */
+.cookiejar-tier-basic .pro-only {
+  opacity: 0.6;
+  position: relative;
+}
+
+.cookiejar-tier-basic .pro-only::after {
+  content: "PRO";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ffc107;
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cookiejar-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cookiejar-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cookiejar-form-actions .button {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  
+  .cookiejar-card {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .cookiejar-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1080px){
+  body.toplevel_page_cookiejar-dashboard,
+  body.cookiejar-dashboard_page_cookiejar-control {
+    --wpwrap-fade-start: 20%;
+  }
+  .cookiejar-grid { grid-template-columns:1fr; }
+  .cookiejar-trend-grid { grid-template-columns:1fr; }
+  .cookiejar-quick-kpis { grid-template-columns:repeat(2, 1fr); }
+  .cookiejar-kpi-mini { grid-template-columns:1fr; }
+  .cookiejar-search { width:100%; }
+}
+
+.cookiejaropyright {
+    text-align: center;
+    color: #64748b;
+}
+
+/* Additional styling for wizard-aligned form elements */
+.cookiejar-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .cookiejar-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+.cookiejar-pro-notice {
+  background: #f0f8ff;
+  border: 1px solid #008ed6;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #008ed6;
+  font-weight: 500;
+}
+
+.cookiejar-tooltip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #008ed6;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.cookiejar-tooltip:hover {
+  background: #0066a1;
+}
+
+.cookiejar-link {
+  color: #008ed6;
+  text-decoration: none;
+  font-size: 13px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.cookiejar-link:hover {
+  text-decoration: underline;
+}
+
+/* WIZARD-STYLE FORM COMPONENTS */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #008ed6;
+  box-shadow: 0 0 0 2px rgba(0, 142, 214, 0.1);
+}
+
+.form-group input[type="color"] {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.form-group fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 0;
+}
+
+.form-group legend {
+  font-weight: 600;
+  color: #333;
+  padding: 0 10px;
+}
+
+.form-group fieldset label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.form-group fieldset label:last-child {
+  margin-bottom: 0;
+}
+
+.form-group .description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.form-group fieldset .description {
+  font-weight: normal;
+  color: #888;
+}
+
+/* Wizard Navigation */
+.wizard-navigation {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(208, 213, 217, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wizard-navigation .button {
+  margin: 0 5px;
+}
+
+/* Language Grid */
+.cookiejar-language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cookiejar-language-option {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.cookiejar-language-option:hover {
+  background: #f8f9fa;
+  border-color: #008ed6;
+}
+
+.cookiejar-language-option input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.cookiejar-language-option .label-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Color Edit Wrap */
+.cookiejar-color-edit-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cookiejar-color-palette, 
+.cookiejar-color-text {
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 85px;
+  max-width: 110px;
+}
+
+/* Tooltip */
+.cookiejar-tooltip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #008ed6;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.cookiejar-tooltip:hover {
+  background: #0066a1;
+}
+
+/* Wizard Footnote */
+.wizard-footnote {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.wizard-footnote a {
+  color: #008ed6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.wizard-footnote a:hover {
+  text-decoration: underline;
+}
+
+.cookiejaropyright a {
+    color: #008ED6;    
+    text-decoration: underline; 
+}
