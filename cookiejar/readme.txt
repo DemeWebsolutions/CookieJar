@@ -1,3 +1,5 @@
+Plugin Name: CookieJar
+Plugin URI: https://www.demewebsolutions.com/cookiejar
 === CookieJar ===
 Contributors: demewebsolutions
 Tags: cookies, gdpr, ccpa, consent, privacy
