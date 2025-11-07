@@ -200,7 +200,7 @@ class CookieJar_Admin {
                 aria-expanded="false"
               >
               <button type="button" class="cookiejar-search-btn" aria-label="<?php esc_attr_e('Run search','cookiejar');?>">
-                <img class="cookiejar-search-icon" src="<?php echo esc_url( DWIC_URL . 'assets/img/searchbar.icon_.cookie.jar_.gif' );?>" alt="">
+                <img class="cookiejar-search-icon" src="<?php echo esc_url( DWIC_URL . 'assets/img/searchbar.icon_.cookie.jar_.gif' );?>" alt="" aria-hidden="true">
               </button>
               <div class="cookiejar-search-suggestions" role="listbox" aria-label="<?php esc_attr_e('Search suggestions','cookiejar');?>" style="display:none;"></div>
             </div>
@@ -383,7 +383,7 @@ class CookieJar_Admin {
                   aria-expanded="false"
                 >
                 <button type="button" class="cookiejar-search-btn" aria-label="<?php esc_attr_e('Run search','cookiejar');?>">
-                  <img class="cookiejar-search-icon" src="<?php echo esc_url( DWIC_URL . 'assets/img/searchbar.icon_.cookie.jar_.gif' );?>" alt="">
+                  <img class="cookiejar-search-icon" src="<?php echo esc_url( DWIC_URL . 'assets/img/searchbar.icon_.cookie.jar_.gif' );?>" alt="" aria-hidden="true">
                 </button>
                 <div class="cookiejar-search-suggestions" role="listbox" aria-label="<?php esc_attr_e('Search suggestions','cookiejar');?>" style="display:none;"></div>
               </div>

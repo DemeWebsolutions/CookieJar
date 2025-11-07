@@ -263,7 +263,7 @@ class Frontend {
         <button id="dwic-revisit-btn" class="dwic-revisit-btn"
             aria-label="<?php esc_attr_e('Review Consent Preferences','cookiejar');?>"
             style="display:none;position:fixed;left:18px;bottom:18px;z-index:99999;border-radius:50%;width:46px;height:46px;border:0;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;transition:background .3s,box-shadow .2s;">
-            <img src="<?php echo esc_url(self::DWIC_COOKIE_ICON ?: (defined('DWIC_ICON_FALLBACK') ? DWIC_ICON_FALLBACK : ''));?>" alt="Consent" style="width:36px;height:36px;display:block;">
+            <img src="<?php echo esc_url(self::DWIC_COOKIE_ICON ?: (defined('DWIC_ICON_FALLBACK') ? DWIC_ICON_FALLBACK : ''));?>" alt="<?php esc_attr_e('Cookie consent preferences icon','cookiejar');?>" style="width:36px;height:36px;display:block;">
         </button>
     <?php }
 
